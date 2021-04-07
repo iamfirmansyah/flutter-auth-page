@@ -1,3 +1,4 @@
+import 'package:first_project/screens/register/register_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:first_project/screens/welcome/components/background.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -40,11 +41,19 @@ class Body extends StatelessWidget {
               },
             ),
             RoundedButton(
-              text: "REGISTER",
-              color: kPrimaryLightColor,
-              textColor: Colors.black,
-              press: () {},
-            ),
+                text: "REGISTER",
+                color: kPrimaryLightColor,
+                textColor: Colors.black,
+                press: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return RegisterScreen();
+                      },
+                    ),
+                  );
+                }),
           ],
         ),
       ),

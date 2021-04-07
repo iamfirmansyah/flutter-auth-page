@@ -1,3 +1,4 @@
+import 'package:first_project/screens/register/register_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:first_project/screens/login/components/background.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -5,8 +6,6 @@ import 'package:first_project/components/rounded_input_field.dart';
 import 'package:first_project/components/rounded_password_field.dart';
 import 'package:first_project/components/rounded_button.dart';
 import 'package:first_project/components/already_have_an_account_check.dart';
-
-import '../../../constants.dart';
 
 class Body extends StatelessWidget {
   const Body({
@@ -31,16 +30,34 @@ class Body extends StatelessWidget {
             hintText: "Your Email",
             onChanged: (value) {},
           ),
-          RoundedPassword(
+          RoundedPasswordField(
             onChanged: (value) {},
           ),
           RoundedButton(
             text: "LOGIN",
-            press: () {},
+            press: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    return RegisterScreen();
+                  },
+                ),
+              );
+            },
           ),
           SizedBox(height: size.height * 0.03),
           AlreadyHaveAnAccountCheck(
-            press: () {},
+            press: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    return RegisterScreen();
+                  },
+                ),
+              );
+            },
           ),
         ],
       ),
